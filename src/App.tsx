@@ -1,7 +1,7 @@
 import ParticleField from './components/ParticleField';
 import Header from './components/Header';
 import Timeline from './components/Timeline';
-import { kyrgyzstanEvents } from './data/kyrgyzstan';
+import { globalEvents } from './data/global';
 import { personalEvents } from './data/personal';
 
 export default function App() {
@@ -11,7 +11,7 @@ export default function App() {
       <Header />
       <main style={{ position: 'relative', zIndex: 1 }}>
         <Timeline
-          kyrgyzstanEvents={kyrgyzstanEvents}
+          globalEvents={globalEvents}
           personalEvents={personalEvents}
         />
       </main>
@@ -27,7 +27,7 @@ export default function App() {
           letterSpacing: '3px',
         }}
       >
-        KYRGYZSTAN & MY TIMELINE — {new Date().getFullYear()}
+        WORLD EVENTS & MY TIMELINE — {new Date().getFullYear()}
       </footer>
     </>
   );

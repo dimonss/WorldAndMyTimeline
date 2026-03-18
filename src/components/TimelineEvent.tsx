@@ -1,41 +1,41 @@
 import { motion } from 'framer-motion';
-import type { TimelineEvent } from '../data/kyrgyzstan';
+import type { GlobalEvent } from '../data/global';
 import type { PersonalEvent } from '../data/personal';
 import './TimelineEvent.css';
 
 interface Props {
-    event: TimelineEvent | PersonalEvent;
+    event: GlobalEvent | PersonalEvent;
     side: 'left' | 'right';
     index: number;
 }
 
-function getCategoryColor(event: TimelineEvent | PersonalEvent): string {
+function getCategoryColor(event: GlobalEvent | PersonalEvent): string {
     if ('category' in event) {
         const map: Record<string, string> = {
-            independence: 'var(--color-independence)',
-            crisis: 'var(--color-crisis)',
-            revolution: 'var(--color-revolution)',
-            modern: 'var(--color-modern)',
+            technology: 'var(--color-independence)',
+            economy: 'var(--color-crisis)',
+            geopolitics: 'var(--color-revolution)',
+            society: 'var(--color-modern)',
         };
         return map[event.category] || 'var(--color-cyan)';
     }
     return 'var(--color-magenta)';
 }
 
-function getCategoryLabel(event: TimelineEvent | PersonalEvent): string {
+function getCategoryLabel(event: GlobalEvent | PersonalEvent): string {
     if ('category' in event) {
         const map: Record<string, string> = {
-            independence: 'Независимость',
-            crisis: 'Кризис',
-            revolution: 'Революция',
-            modern: 'Современность',
+            technology: 'Технологии',
+            economy: 'Экономика',
+            geopolitics: 'Геополитика',
+            society: 'Общество',
         };
         return map[event.category] || '';
     }
     return 'Личное';
 }
 
-function formatEventDate(event: TimelineEvent | PersonalEvent): string {
+function formatEventDate(event: GlobalEvent | PersonalEvent): string {
     const [year, month, day] = event.date.split('-');
     if (!year || !month || !day) return event.date;
     return `${day}.${month}.${year}`;

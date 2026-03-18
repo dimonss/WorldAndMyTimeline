@@ -13,7 +13,7 @@ export default function Header() {
                 <div className="header__badge">INTERACTIVE TIMELINE</div>
                 <h1 className="header__title">
                     <span className="header__title-line header__title-line--kg">
-                        Кыргызстан
+                        Мир вокруг меня
                     </span>
                     <span className="header__title-ampersand">&</span>
                     <span className="header__title-line header__title-line--me">
@@ -21,24 +21,24 @@ export default function Header() {
                     </span>
                 </h1>
                 <p className="header__subtitle">
-                    Параллельные линии времени — ключевые события страны и личные вехи
+                    Параллельные линии времени — мировой контекст, который влиял на мои решения, и личные вехи
                 </p>
 
                 <div className="header__legend">
                     <div className="header__legend-section">
-                        <span className="header__legend-label">🇰🇬 Кыргызстан</span>
+                        <span className="header__legend-label">🌍 Мировые события</span>
                         <div className="header__legend-items">
                             <span className="header__legend-item" style={{ '--c': 'var(--color-independence)' } as React.CSSProperties}>
-                                Независимость
+                                Технологии
                             </span>
                             <span className="header__legend-item" style={{ '--c': 'var(--color-crisis)' } as React.CSSProperties}>
-                                Кризис
+                                Экономика
                             </span>
                             <span className="header__legend-item" style={{ '--c': 'var(--color-revolution)' } as React.CSSProperties}>
-                                Революция
+                                Геополитика
                             </span>
                             <span className="header__legend-item" style={{ '--c': 'var(--color-modern)' } as React.CSSProperties}>
-                                Современность
+                                Общество
                             </span>
                         </div>
                     </div>

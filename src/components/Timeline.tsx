@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import type { TimelineEvent as TEvent } from '../data/kyrgyzstan';
+import type { GlobalEvent } from '../data/global';
 import type { PersonalEvent } from '../data/personal';
 import TimelineEventCard from './TimelineEvent';
 import './Timeline.css';
@@ -8,12 +8,12 @@ import './Timeline.css';
 interface MergedEvent {
     date: string;
     year: number;
-    event: TEvent | PersonalEvent;
+    event: GlobalEvent | PersonalEvent;
     side: 'left' | 'right';
 }
 
 interface Props {
-    kyrgyzstanEvents: TEvent[];
+    globalEvents: GlobalEvent[];
     personalEvents: PersonalEvent[];
 }
 
@@ -21,14 +21,14 @@ function getYearFromDate(date: string): number {
     return Number(date.slice(0, 4));
 }
 
-export default function Timeline({ kyrgyzstanEvents, personalEvents }: Props) {
+export default function Timeline({ globalEvents, personalEvents }: Props) {
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll();
     const lineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
 
     // Merge and sort events by date
     const merged: MergedEvent[] = [
-        ...kyrgyzstanEvents.map((e) => ({
+        ...globalEvents.map((e) => ({
             date: e.date,
             year: getYearFromDate(e.date),
             event: e,
