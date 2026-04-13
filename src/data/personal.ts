@@ -64,6 +64,12 @@ export const personalEvents: PersonalEvent[] = [
         icon: '🚀',
     },
     {
+        date: '2024-12-16',
+        title: 'Первое путешествие в теплые страны',
+        description: 'Поездка в Паттайю, Тайланд — первый опыт отдыха в тропиках.',
+        icon: '🌴',
+    },
+    {
         date: '2025-01-08',
         title: 'Покупка автомобиля',
         description:
