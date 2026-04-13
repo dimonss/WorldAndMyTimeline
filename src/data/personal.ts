@@ -25,6 +25,13 @@ export const personalEvents: PersonalEvent[] = [
         icon: '🏫',
     },
     {
+        date: '2012-03-01',
+        title: 'Первое знакомство с платформой Android',
+        description:
+            'Покупка смартфона HTC Explorer (a310e)',
+        icon: '📱',
+    },
+    {
         date: '2012-09-01',
         title: 'Колледж',
         description: 'Поступление в колледж — углубление знаний и специализация.',
