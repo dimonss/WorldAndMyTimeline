@@ -57,7 +57,7 @@ export default function Timeline({ globalEvents, personalEvents }: Props) {
             </div>
 
             {/* Interleaved year markers + events */}
-            {years.map((year, yi) => {
+            {years.map((year) => {
                 const eventsForYear = merged.filter((m) => m.year === year);
                 return (
                     <div key={year} className="timeline__year-group">
@@ -66,7 +66,7 @@ export default function Timeline({ globalEvents, personalEvents }: Props) {
                             initial={{ opacity: 0, scale: 0 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true, margin: '-20px' }}
-                            transition={{ duration: 0.4, delay: yi * 0.03 }}
+                            transition={{ duration: 0.4 }}
                         >
                             <div className="timeline__year-dot" />
                             <span className="timeline__year-label">{year}</span>
@@ -76,7 +76,7 @@ export default function Timeline({ globalEvents, personalEvents }: Props) {
                                 key={`${item.side}-${item.date}-${item.event.title}`}
                                 event={item.event}
                                 side={item.side}
-                                index={yi * 3 + ei}
+                                index={ei}
                             />
                         ))}
                     </div>
